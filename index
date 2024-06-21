@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratikanta Nayak's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+        }
+        header .profile-picture {
+            border-radius: 50%;
+            max-width: 100px;
+            margin-right: 1rem;
+        }
+        header .header-text {
+            display: flex;
+            flex-direction: column;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
+            padding-bottom: 4rem; /* Increased padding to accommodate footer */
+        }
+        .main {
+            background: #fff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .main:hover {
+            transform: translateY(-10px);
+        }
+        .main h2 {
+            border-bottom: 2px solid #1a1a2e;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        footer {
+            background: #1a1a2e;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 1rem;
+            position: relative;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 0.5rem 0;
+        }
+        a {
+            color: #1a1a2e;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #e94560;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: #1a1a2e;
+            padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .navbar a:hover {
+            background: #e94560;
+            color: #fff;
+            border-radius: 4px;
+        }
+        .section {
+            padding: 4rem 0; /* Increased padding to avoid overlapping */
+        }
+        .fade-in {
+            animation: fadeIn 1.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .nested-list {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+        .nested-list li {
+            margin-left: 20px;
+        }
+
+        /* Media queries for responsive design */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+            header .profile-picture {
+                margin-bottom: 1rem;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            .navbar {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .navbar a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            .main {
+                padding: 1.5rem;
+            }
+            .main h2 {
+                font-size: 1.8rem;
+            }
+            .main p,
+            .main ul {
+                font-size: 1rem;
+            }
+            .section {
+                padding: 2rem 0; /* Adjusted padding for sections */
+            }
+            .contact {
+                font-size: 0.9rem;
+            }
+            footer {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="profile-picture" src="https://avatars.githubusercontent.com/u/170526236?s=400&u=c26ecacaba190956d674db3f95c9a24318669bbe&v=4" alt="Profile Picture">
+        <div class="header-text">
+            <h1>Ratikanta Nayak</h1>
+            <p>Experienced Mainframe Developer | Cloud Technologies Enthusiast</p>
+        </div>
+    </header>
+    <nav class="navbar">
+        <a href="#about">About Me</a>
+        <a href="#summary">Professional Summary</a>
+        <a href="#employment">Employment Details</a>
+        <a href="#projects">Project Details</a>
+        <a href="#skills">Technical Skills</a>
+        <a href="#education">Education</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contacts</a>
+    </nav>
+    <div class="container">
+        <div id="about" class="main section fade-in">
+            <h2>About Me</h2>
+            <p>Experienced Mainframe Developer with a focus on Cloud technologies, driving digital innovation. Skilled in optimizing legacy systems for seamless integration with modern, cloud-based environments. Proficient in Azure DevOps, streamlining workflows, automating processes, and fostering collaboration. Enthusiastic about growth in the Cloud and digital technology realms, actively seeking to expand skills and stay ahead of industry advancements. Dedicated to driving innovation and growth within Mainframe and digital technology businesses, bridging the gap between legacy systems and modern cloud architectures. Results-oriented with a passion for continuous improvement, poised to contribute technical acumen, strategic thinking, and collaboration to thrive in the digital landscape.</p>
+        </div>
+        <div id="summary" class="main section fade-in">
+            <h2>Professional Summary</h2>
+            <ul>
+                <li>10+ years of experience in Application Development and Maintenance, Enhancement and Production support, Requirement Analysis, Client Management.</li>
+                <li>Strong analytical, problem-solving, multitasking and strategic planning skills.</li>
+                <li>Good at Automation, removing manual intervention in the application resulting in Client Satisfaction.</li>
+                <li>Proficient in executing IT projects and ensuring delivery of projects in compliance with defined quality parameters.</li>
+                <li>Executed end-to-end development of software projects from requirement specifications, planning, designing, implementation, configuration management, documentation.</li>
+                <li>Ability to understand and meet the changing business requirements.</li>
+                <li>Mentoring new joiners in the project and giving them knowledge transfer for the project.</li>
+            </ul>
+        </div>
+        <div id="employment" class="main section fade-in">
+            <h2>Employment Details</h2>
+            <ul>
+                <li><strong>Infosys Limited.</strong> (Apr 2013 - July 2018: Technology Analyst)</li>
+                <li><strong>Cognizant Technology Solutions.</strong> (Aug 2018 - Mar 2021: Associate Projects)</li>
+                <li><strong>Tata Consultancy Services.</strong> (Mar 2021 - Present: Assistant Consultant)</li>
+            </ul>
+        </div>
+        <div id="projects" class="main section fade-in">
+            <h2>Project Details</h2>
+            <h3>Assignment-6 (Jan 2023 - Present)</h3>
+            <ul>
+                <li>Client: ABN AMRO</li>
+                <li>Role: Assistant Consultant</li>
+                <li>Project: Order Processing</li>
+                <li>
+                    <strong>Responsibilities:</strong> IT Engineer
+                    <ul class="nested-list">
+                        <li>Daily scrum meetings</li>
+                        <li>Business Stakeholder coordination</li>
+                        <li>CICD Adoption and Implementation</li>
+                        <li>Production Issue analysis and Resolution</li>
+                    </ul>
+                </li>
+                <li>Technologies: COBOL, DB2, JCL, IMS, COOL-GEN, Azure, Java, Spring boot.</li>
+            </ul>
+            <h3>Assignment-5 (Mar 2021 - Dec 2022)</h3>
+            <ul>
+                <li>Client: HSBC</li>
+                <li>Role: Assistant Consultant</li>
+                <li>Project: Loan Amortization ATL Project</li>
+                <li>
+                    <strong>Responsibilities:</strong> Technical Lead and Scrum Master
+                    <ul class="nested-list">
+                        <li>Daily scrum meetings meeting to review the progress</li>
+                        <li>Technical Specification Document (TSD) preparation</li>
+                        <li>Coding, Unit Testing, Review, SIT and UAT support</li>
+                        <li>Co-ordinate with Business stakeholders</li>
+                    </ul>
+                </li>
+                <li>Technologies: COBOL, DB2, JCL, IMS, COOL-GEN, Azure, Java, Spring boot.</li>
+            </ul>
+            <h3>Assignment-4 (Aug 2018 - Mar 2021)</h3>
+            <ul>
+                <li>Client: British Airways</li>
+                <li>Role: Project Associates</li>
+                <li>Project: CFS (Common Finance System)</li>
+                <li>
+                    <strong>Responsibilities:</strong> Mainframe Developer and Module Lead
+                    <ul class="nested-list">
+                        <li>Technical Specification Document (TSD) preparation</li>
+                        <li>Coding, Unit Testing, Review, SIT and UAT support</li>
+			<li>Implementation Plan preparation</li>
+                        <li>Co-ordinate with Business stakeholders</li>
+                    </ul>
+                </li>
+                <li>Technologies: COBOL, DB2, JCL, VSAM, ENDEVOR, Change Man, Control M</li>
+            </ul>
+            <h3>Assignment-3 (Sep 2017 - July 2018)</h3>
+            <ul>
+                <li>Client: Aetna</li>
+                <li>Role: Technology Analyst</li>
+                <li>Project: Y2K Remediation in Corporate Domain</li>
+                <li>
+                    <strong>Responsibilities:</strong> Mainframe Developer
+                    <ul class="nested-list">
+                        <li>System analysis to identify impacted COBOL modules handling date fields going year2020 and finalizing the optimized solution for the fix in terms in cost optimization for client.</li>
+                        <li>Primary responsible for Design, Coding, Unit Testing, Mentoring team members, deployment activities, staging product checkout and client interactions.</li>
+                    </ul>
+                </li>
+                <li>Technologies: COBOL, DB2, JCL, IMS, COOL-GEN, Azure, Java, Spring boot.</li>
+            </ul>
+            <h3>Assignment-2 (Aug 2013 - Aug 2017)</h3>
+            <ul>
+                <li>Client: Aetna</li>
+                <li>Role: Assistant Consultant</li>
+                <li>Project: Managed Services</li>
+                <li>
+                    <strong>Responsibilities:</strong> Mainframe Developer
+                    <ul class="nested-list">
+                        <li>Solving Production Issues, Abend Handling, Root Cause Analysis</li>
+                    </ul>
+                </li>
+                <li>Technologies: COBOL, DB2, JCL, IMS, COOL-GEN, Azure, Java, Spring boot.</li>
+            </ul>
+            <h3>Assignment-1 (Apr 2013 - July 2013)</h3>
+            <ul>
+                <li>Infosys Mysore: Training Campus</li>
+                <li>Role: System Engineer</li>
+                <li>Project: Mainframe Training and Generic in-house projects</li>
+                <li>
+                    <strong>Responsibilities:</strong> Training
+                    <ul class="nested-list">
+                        <li>Completed generic training in DBMS, Software Engineering, agile methodology, OS, Java, Mainframe Techonology involving MVS, JCL, COBOL, DB2, JCL, CICS</li>
+                    </ul>
+                </li>
+                <li>Technologies: COBOL, DB2, JCL, IMS, COOL-GEN, Azure, Java, Spring boot.</li>
+            </ul>
+        </div>
+        <div id="skills" class="main section fade-in">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li>Programming Languages: COBOL, JCL, DB2, REXX, VSAM, C, Unix</li>
+                <li>Platforms: Windows 7, IBM Mainframe, JIRA</li>
+                <li>Change Control Tool: ENDEVOR, Change Man</li>
+                <li>Debugging Tool: XPEDITER</li>
+                <li>Ticket Tracking Tool: ServiceCenter Client, Service NOW, Assyst</li>
+                <li>Remote Accessing Tool: PuTTY</li>
+                <li>Databases: DB2, IMS DB, IMS DC</li>
+                <li>Tools & Utilities: FILEAID, FILE MANAGER, ZEKE, Control-M IBM MAINFRAME UTILITIES</li>
+            </ul>
+        </div>
+        <div id="education" class="main section fade-in">
+            <h2>Education</h2>
+            <ul>
+                <li>B. Tech in Applied Electronics and Instrumentation Engineering from C.V. Raman College of Engineering, Bhubaneswar - 7.67 CGPA</li>
+                <li>XII from Stewart Science College, Cuttack - 74%</li>
+                <li>X from Odisha Police High School, Cuttack - 84%</li>
+            </ul>
+        </div>
+        <div id="awards" class="main section fade-in">
+            <h2>Awards</h2>
+            <ul>
+                <li>Icon of the Month (August 2019) - Cognizant</li>
+                <li>Insta Award (2017, 2018) - Infosys</li>
+            </ul>
+        </div>
+        <div id="contact" class="main section fade-in contact">
+            <h2>Contact and Personal Details</h2>
+            <p>Date of Birth: 15th July 1990</p>
+            <p>Laguage Known: English, Hindi, Odia</p>
+            <p>Email: <a href="mailto:rkofficial157@gmail.com">rkofficial157@gmail.com</a></p>
+            <p>Phone: +91-7008256757</p>
+            <p>Address: C/O – Padmanav Nayak, At/PO- Tulasipal, PS: Banarpal, Dist: Angul, Odisha, 759128</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Ratikanta Nayak</p>
+    </footer>
+</body>
+</html>
