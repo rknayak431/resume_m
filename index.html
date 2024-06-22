@@ -14,6 +14,7 @@
             padding: 0;
             color: #333;
             background-color: #f4f4f4;
+            scroll-behavior: smooth;
         }
         header {
             background: #1a1a2e;
@@ -100,7 +101,7 @@
             text-decoration: none;
             transition: background 0.3s ease, color 0.3s ease;
         }
-        .navbar a:hover {
+        .navbar a:hover, .navbar a.active {
             background: #e94560;
             color: #fff;
             border-radius: 4px;
@@ -178,14 +179,14 @@
         </div>
     </header>
     <nav class="navbar">
-        <a href="#about">About Me</a>
-        <a href="#summary">Professional Summary</a>
-        <a href="#employment">Employment Details</a>
-        <a href="#projects">Project Details</a>
-        <a href="#skills">Technical Skills</a>
-        <a href="#education">Education</a>
-        <a href="#awards">Awards</a>
-        <a href="#contact">Contacts</a>
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#summary" class="nav-link">Professional Summary</a>
+        <a href="#employment" class="nav-link">Employment Details</a>
+        <a href="#projects" class="nav-link">Project Details</a>
+        <a href="#skills" class="nav-link">Technical Skills</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#awards" class="nav-link">Awards</a>
+        <a href="#contact" class="nav-link">Contacts</a>
     </nav>
     <div class="container">
         <div id="about" class="main section fade-in">
@@ -343,5 +344,38 @@
     <footer>
         <p>&copy; 2024 Ratikanta Nayak</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function setActiveLink() {
+                navLinks.forEach(link => {
+                    const section = document.querySelector(link.getAttribute('href'));
+                    const top = section.offsetTop - window.scrollY;
+                    const bottom = top + section.offsetHeight;
+                    if (top <= 50 && bottom > 50) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 50, // Adjust this value to fit your header height
+                        behavior: 'smooth'
+                    });
+                    setActiveLink();
+                });
+            });
+
+            window.addEventListener('scroll', setActiveLink);
+        });
+    </script>
 </body>
 </html>
