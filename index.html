@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -352,12 +352,11 @@
             // Get all sections with .section class
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
-                const top = section.offsetTop - window.scrollY;
-                const bottom = top + section.offsetHeight;
-                // Toggle active class on nav links based on scroll position
+                const top = section.getBoundingClientRect().top;
+                // Toggle active class on nav links based on visibility
                 navLinks.forEach(link => {
                     if (link.getAttribute('href') === `#${section.id}`) {
-                        if (top <= 50 && bottom > 50) {
+                        if (top >= 0 && top < window.innerHeight * 0.6) {
                             link.classList.add('active');
                         } else {
                             link.classList.remove('active');
