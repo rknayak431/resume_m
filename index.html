@@ -349,15 +349,21 @@
         const navLinks = document.querySelectorAll('.nav-link');
 
         function setActiveLink() {
-            navLinks.forEach(link => {
-                const section = document.querySelector(link.getAttribute('href'));
+            // Get all sections with .section class
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
                 const top = section.offsetTop - window.scrollY;
                 const bottom = top + section.offsetHeight;
-                if (top <= 50 && bottom > 50) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
+                // Toggle active class on nav links based on scroll position
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === `#${section.id}`) {
+                        if (top <= 50 && bottom > 50) {
+                            link.classList.add('active');
+                        } else {
+                            link.classList.remove('active');
+                        }
+                    }
+                });
             });
         }
 
@@ -366,16 +372,19 @@
                 event.preventDefault();
                 const targetId = this.getAttribute('href').substring(1);
                 const targetSection = document.getElementById(targetId);
-                const offset = window.innerWidth <= 768 ? 70 : 50; // Adjusted offset for smaller screens
+                let offset = 50; // Default offset for larger screens
+                if (window.innerWidth <= 768) {
+                    offset = 70; // Adjusted offset for smaller screens
+                }
                 window.scrollTo({
                     top: targetSection.offsetTop - offset,
                     behavior: 'smooth'
                 });
-                setActiveLink();
+                setActiveLink(); // Update active state immediately after scrolling
             });
         });
 
-        window.addEventListener('scroll', setActiveLink);
+        window.addEventListener('scroll', setActiveLink); // Update active state on scroll
     });
 </script>
 </body>
