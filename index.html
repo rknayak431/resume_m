@@ -344,38 +344,39 @@
     <footer>
         <p>&copy; 2024 Ratikanta Nayak</p>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.nav-link');
 
-            function setActiveLink() {
-                navLinks.forEach(link => {
-                    const section = document.querySelector(link.getAttribute('href'));
-                    const top = section.offsetTop - window.scrollY;
-                    const bottom = top + section.offsetHeight;
-                    if (top <= 50 && bottom > 50) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-            }
-
+        function setActiveLink() {
             navLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 50, // Adjust this value to fit your header height
-                        behavior: 'smooth'
-                    });
-                    setActiveLink();
-                });
+                const section = document.querySelector(link.getAttribute('href'));
+                const top = section.offsetTop - window.scrollY;
+                const bottom = top + section.offsetHeight;
+                if (top <= 50 && bottom > 50) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
             });
+        }
 
-            window.addEventListener('scroll', setActiveLink);
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                const offset = window.innerWidth <= 768 ? 70 : 50; // Adjusted offset for smaller screens
+                window.scrollTo({
+                    top: targetSection.offsetTop - offset,
+                    behavior: 'smooth'
+                });
+                setActiveLink();
+            });
         });
-    </script>
+
+        window.addEventListener('scroll', setActiveLink);
+    });
+</script>
 </body>
 </html>
